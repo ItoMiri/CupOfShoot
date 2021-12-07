@@ -151,7 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CupUnit.cpp" />
     <ClCompile Include="DrawPixel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CupUnit.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
