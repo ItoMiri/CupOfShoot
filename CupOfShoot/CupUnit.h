@@ -17,4 +17,4 @@ protected:
 	float sizeX, sizeY;
 	int cupHandle; // 辞書参照の代入用変数
 	
-};
+}; // コメント
