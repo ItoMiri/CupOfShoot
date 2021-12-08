@@ -1,5 +1,6 @@
 #pragma once
 #include "CupUnit.h"
+#include "ImageResize.h"
 
 class NormalCup : public CupUnit
 {
