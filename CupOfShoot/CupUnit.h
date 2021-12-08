@@ -1,8 +1,9 @@
 #pragma once
+#include "DxLib.h"
 class CupUnit
 {
 public: // コンストラクタでCupの画像を読み込む 画像はハンドルで格納
-	CupUnit();
+	CupUnit(float x, float y, float sx, float sy, float sizeX, float sizeY, bool beLiving, int life);
 	~CupUnit();
 
 	virtual void Update() = 0;
@@ -17,4 +18,4 @@ protected:
 	float sizeX, sizeY;
 	int cupHandle; // 辞書参照の代入用変数
 	
-}; // コメント
+};
