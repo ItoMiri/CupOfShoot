@@ -1,4 +1,5 @@
 #include "DxLib.h"
+#include "NormalCup.h"
 
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -8,9 +9,18 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		return -1;			// エラーが起きたら直ちに終了
 	}
 
-	DrawPixel(320, 240, GetColor(255, 255, 255));	// 点を打つ
+	SetDrawArea(0, 0, 1920, 1080);
+	SetGraphMode(1920, 1080, 32);
+	SetMouseDispFlag(TRUE);
 
-	WaitKey();				// キー入力待ち
+	NormalCup cup = NormalCup(0, 0, 0, 0, 100, 100, TRUE, 10);
+
+	while (!ProcessMessage() && !ScreenFlip() && !ClearDrawScreen()){
+		cup.Update();
+		cup.Draw();
+
+		if (CheckHitKey(KEY_INPUT_ESCAPE) != 0) break;
+	}// キー入力待ち
 
 	DxLib_End();				// ＤＸライブラリ使用の終了処理
 

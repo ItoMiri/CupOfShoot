@@ -6,7 +6,7 @@ NormalCup::NormalCup(float x, float y, float sx, float sy, float sizeX, float si
 	posMass[0] = 0; // ここは計算必要　外部クラスで計算させる
 	posMass[1] = 0;
 
-	cupHandle = -1; // ここで外部mapより取得
+	cupHandle = LoadGraph("./Contents/CupNormal.png"); // ここで外部mapより取得
 }
 
 void NormalCup::Update() { // 重力判定等記述

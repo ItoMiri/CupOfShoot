@@ -152,7 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CupUnit.cpp" />
-    <ClCompile Include="DrawPixel.cpp" />
+    <ClCompile Include="CupOfShoot.cpp" />
     <ClCompile Include="NormalCup.cpp" />
   </ItemGroup>
   <ItemGroup>
