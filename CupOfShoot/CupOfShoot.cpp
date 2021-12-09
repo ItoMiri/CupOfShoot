@@ -2,6 +2,8 @@
 #include "NormalCup.h"
 #include "FPSTimer.h"
 #include "PlayerMob.h"
+#include "KeyboardInput.h"
+#include "CupStack.h"
 
 #pragma warning(push)
 #pragma warning(disable:28251)
@@ -20,15 +22,19 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	SetWindowSizeChangeEnableFlag(TRUE);// ウインドウを可変にするかTRUEで可変
 	ChangeWindowMode(TRUE);
 
-	NormalCup cup(0, 0, 0, 0, 1000, 1000, TRUE, 10);
-	PlayerMob player(200, 200, 0, 0, 10);
+	//NormalCup cup(0, 0, 0, 0, 1000, 1000, TRUE, 10);
+	CupStack cStack(1);
+	PlayerMob player(200, 200, 0, 0, 10, cStack);
 
 	while (!ProcessMessage() && !ScreenFlip() && !ClearDrawScreen()) {
-		cup.Update();
+		SetDrawScreen(DX_SCREEN_BACK);
+		KeyboardInput::Update();
+		if (KeyboardInput::GetKey(KEY_INPUT_LCONTROL) >= 1) DrawBoxAA(300, 300, 100, 100, GetColor(255, 0, 255), TRUE);
+		cStack.Update();
 		player.Update();
-		cup.Draw();
+		cStack.Draw();
 		player.Draw();
-		FPSTimer::Update(); // fps計算
+		//FPSTimer::Update(); // fps計算
 		if (CheckHitKey(KEY_INPUT_ESCAPE) != 0) break; // ESCで脱出
 		// printf("%d\n",FPSTimer::GetFPS());
 		// SetDrawArea(0, 0, FPSTimer::GetFPS()*20, FPSTimer::GetFPS()*20); // fpsを描画領域で可視化

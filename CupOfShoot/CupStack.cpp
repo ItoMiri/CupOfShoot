@@ -1,7 +1,13 @@
 #include "CupStack.h"
 
-CupStack::CupStack()
+CupStack::CupStack(int initialNum)
 {
+	cupMax = initialNum;
+}
+
+void CupStack::SetCupMax(int num)
+{
+	cupMax = num;
 }
 
 void CupStack::SetCupQuantity(int num)
@@ -17,6 +23,12 @@ void CupStack::SetCupQuantity(int num)
 			cup.pop_back();
 		}
 	}
+}
+
+void CupStack::IncreaseCup(int x, int y)
+{
+	// カップの個数が一定以上なら，0番目を破壊してから描画させる→配列を一定量とってもいいかもしれない
+	cup.push_back(NormalCup(0, 0, 0, 0, 1000, 1000, TRUE, 10));
 }
 
 void CupStack::Update()
