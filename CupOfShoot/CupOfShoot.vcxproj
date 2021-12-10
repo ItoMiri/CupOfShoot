@@ -160,6 +160,7 @@
     <ClCompile Include="MobUnit.cpp" />
     <ClCompile Include="MouseInput.cpp" />
     <ClCompile Include="NormalCup.cpp" />
+    <ClCompile Include="PhysicsData.cpp" />
     <ClCompile Include="PlayerMob.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +172,7 @@
     <ClInclude Include="MobUnit.h" />
     <ClInclude Include="MouseInput.h" />
     <ClInclude Include="NormalCup.h" />
+    <ClInclude Include="PhysicsData.h" />
     <ClInclude Include="PlayerMob.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

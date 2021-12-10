@@ -23,24 +23,31 @@ void CupStack::SetCupQuantity(int num)
 			cup.pop_back();
 		}
 	}
+	cupMax = num;
 }
 
 void CupStack::IncreaseCup(int x, int y)
 {
-	// カップの個数が一定以上なら，0番目を破壊してから描画させる→配列を一定量とってもいいかもしれない
-	cup.push_back(NormalCup(0, 0, 0, 0, 150, 150, TRUE, 10));
+	size_t size = cup.size();
+	if (size >= cupMax) DestroyCup();
+	cup.push_back(NormalCup(x, y, 0, 0, 75, 75, TRUE, 10));
 }
 
 void CupStack::Update()
 {
-	for (auto cups : cup) {
+	for (auto& cups : cup) {
 		cups.Update();
 	}
 }
 
 void CupStack::Draw()
 {
-	for (auto cups : cup) {
+	for (auto& cups : cup) {
 		cups.Draw();
 	}
+}
+
+void CupStack::DestroyCup()
+{
+	// ここにカップの破壊メンバを呼び出す
 }

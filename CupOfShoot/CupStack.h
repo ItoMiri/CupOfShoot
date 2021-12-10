@@ -14,6 +14,8 @@ public:
 	void Update();
 	void Draw();
 private:
+	void DestroyCup();
+
 	int cupMax;
 	std::vector<NormalCup> cup;
 };

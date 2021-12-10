@@ -29,7 +29,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	while (!ProcessMessage() && !ScreenFlip() && !ClearDrawScreen()) {
 		SetDrawScreen(DX_SCREEN_BACK);
 		KeyboardInput::Update();
-		if (KeyboardInput::GetKey(KEY_INPUT_LCONTROL) >= 1) DrawBoxAA(300, 300, 100, 100, GetColor(255, 0, 255), TRUE);
+		//if (KeyboardInput::GetKey(KEY_INPUT_LCONTROL) >= 1) DrawBoxAA(300, 300, 100, 100, GetColor(255, 0, 255), TRUE);
 		cStack.Update();
 		player.Update();
 		cStack.Draw();

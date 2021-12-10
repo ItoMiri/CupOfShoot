@@ -1,6 +1,7 @@
 #pragma once
 #include "CupUnit.h"
 #include "ImageResize.h"
+#include "PhysicsData.h"
 
 class NormalCup : public CupUnit
 {
