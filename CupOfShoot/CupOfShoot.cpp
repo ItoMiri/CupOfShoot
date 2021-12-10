@@ -27,6 +27,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	PlayerMob player(200, 200, 0, 0, 10, cStack);
 
 	while (!ProcessMessage() && !ScreenFlip() && !ClearDrawScreen()) {
+		Time::Update();
 		SetDrawScreen(DX_SCREEN_BACK);
 		KeyboardInput::Update();
 		//if (KeyboardInput::GetKey(KEY_INPUT_LCONTROL) >= 1) DrawBoxAA(300, 300, 100, 100, GetColor(255, 0, 255), TRUE);

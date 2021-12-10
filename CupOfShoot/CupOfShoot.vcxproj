@@ -162,6 +162,7 @@
     <ClCompile Include="NormalCup.cpp" />
     <ClCompile Include="PhysicsData.cpp" />
     <ClCompile Include="PlayerMob.cpp" />
+    <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CupStack.h" />
@@ -174,6 +175,7 @@
     <ClInclude Include="NormalCup.h" />
     <ClInclude Include="PhysicsData.h" />
     <ClInclude Include="PlayerMob.h" />
+    <ClInclude Include="Time.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
