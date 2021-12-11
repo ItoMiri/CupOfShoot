@@ -1,7 +1,7 @@
 #include "MainGame.h"
 
 MainGame::MainGame(GameValue& gValue)
-	:cStack(3), player(Vector2(100, 100), Vector2(0), 10, cStack)
+	:cStack(3), player(Vector2(100, 100), Vector2(0), 10, cStack), tStack()
 {
 	this->gValue = &gValue;
 }
@@ -9,6 +9,7 @@ MainGame::MainGame(GameValue& gValue)
 void MainGame::Update()
 {
 	cStack.Update();
+	tStack.Update();
 	player.Update();
 }
 
@@ -20,6 +21,7 @@ void MainGame::Draw()
 	DrawBox(0, 0, 1920, 1080, GetColor(200, 40, 50), TRUE);
 	SetDrawArea(0, 0, 0, 0);
 	cStack.Draw();
+	tStack.Draw();
 	player.Draw();
 	SetDrawScreen(DX_SCREEN_BACK);
 

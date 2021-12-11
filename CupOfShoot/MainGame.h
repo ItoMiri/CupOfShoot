@@ -2,6 +2,7 @@
 #include "GameValue.h"
 #include "CupStack.h"
 #include "PlayerMob.h"
+#include "TerrianStack.h"
 class MainGame
 {
 public:
@@ -14,5 +15,6 @@ private:
 	GameValue* gValue{};
 	CupStack cStack;
 	PlayerMob player;
+	TerrianStack tStack;
 };
 

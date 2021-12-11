@@ -8,8 +8,8 @@ class SquareTerrain :
 public:
     SquareTerrain(int maskNum, Vector2 vec1, Vector2 vec2, Vector2 vec3, Vector2 vec4);
 
-    void Update();
-    void Draw();
+    virtual void Update();
+    virtual void Draw();
 
 private:
     std::vector<Vector2> vec;

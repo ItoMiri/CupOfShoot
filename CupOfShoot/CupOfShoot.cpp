@@ -44,18 +44,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		}
 		rect = nowRect;
 
-		Time::Update();
+		Time::Update(); // システムアップデート
 		KeyboardInput::Update();
 
-		mainGame.Update();
+		mainGame.Update(); // SceneManagerが将来的に欲しい
 		mainGame.Draw();
 
-		//#ifdef Debug
-		//		SetDrawScreen(DX_SCREEN_BACK);
-		//		DrawFormatString(500, 500, GetColor(255, 255, 255), "%d", gValue.windowWidth);
-		//#endif // DEBUG		
-
-				//FPSTimer::Update(); // fps計算
 		if (CheckHitKey(KEY_INPUT_ESCAPE) != 0) break; // ESCで脱出
 		if (KeyboardInput::GetKey(KEY_INPUT_F11) == KB_PRESS_FIRST) {
 			if (gValue.fullWindow) {
