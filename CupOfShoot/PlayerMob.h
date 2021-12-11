@@ -2,11 +2,12 @@
 #include "KeyboardInput.h"
 #include "MobUnit.h"
 #include "CupStack.h"
+#include "Time.h"
 class PlayerMob :
     public MobUnit
 {
 public:
-    PlayerMob(float x, float y, float sx, float sy, int hp, CupStack& cStack);
+    PlayerMob(Vector2 vec, Vector2 sVec, int hp, CupStack& cStack);
     ~PlayerMob();
 
     void Update();
@@ -14,5 +15,6 @@ public:
 
 private:
     CupStack* cStack{};
+    int direction;
 };
 

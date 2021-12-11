@@ -1,13 +1,12 @@
 #include "MobUnit.h"
 
-MobUnit::MobUnit(float x, float y, float sx, float sy, int hp)
+MobUnit::MobUnit(Vector2 vec, Vector2 sVec, int hp)
 {
-	this->x = x;
-	this->y = y;
-	this->sx = sx;
-	this->sy = sy;
+	this->vec = vec;
+	this->sVec = sVec;
 	this->hp = hp;
 	hpMax = this->hp;
+	sVecMax = Vector2();
 }
 
 MobUnit::~MobUnit()

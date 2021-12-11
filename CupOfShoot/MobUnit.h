@@ -1,17 +1,19 @@
 #pragma once
 #include "DxLib.h"
+#include "Vector2.h"
 class MobUnit
 {
 public:
-	MobUnit(float x, float y, float sx, float sy, int hp);
+	MobUnit(Vector2 vec, Vector2 sVec, int hp);
 	~MobUnit();
 
 	virtual void Update() = 0;
 	virtual void Draw() = 0;
 
 protected:
-	float x, y;
-	float sx, sy;
+	Vector2 vec;
+	Vector2 sVec;
+	Vector2 sVecMax;
 	int hp, hpMax;
 };
 

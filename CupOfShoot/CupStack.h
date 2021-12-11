@@ -16,8 +16,8 @@ public:
 private:
 	void DestroyCup();
 
-	float sxAtSummoning;
-	float syAtSummoning;
+	Vector2 sAtSummoning;
 	int cupMax;
+	int cupSize;
 	std::vector<NormalCup> cup;
 };

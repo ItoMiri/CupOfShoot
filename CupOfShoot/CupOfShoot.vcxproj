@@ -162,12 +162,15 @@
     <ClCompile Include="NormalCup.cpp" />
     <ClCompile Include="PhysicsData.cpp" />
     <ClCompile Include="PlayerMob.cpp" />
+    <ClCompile Include="SquareTerrain.cpp" />
+    <ClCompile Include="TerrainUnit.cpp" />
     <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CupStack.h" />
     <ClInclude Include="CupUnit.h" />
     <ClInclude Include="FPSTimer.h" />
+    <ClInclude Include="GameValue.h" />
     <ClInclude Include="ImageResize.h" />
     <ClInclude Include="KeyboardInput.h" />
     <ClInclude Include="MobUnit.h" />
@@ -175,7 +178,10 @@
     <ClInclude Include="NormalCup.h" />
     <ClInclude Include="PhysicsData.h" />
     <ClInclude Include="PlayerMob.h" />
+    <ClInclude Include="SquareTerrain.h" />
+    <ClInclude Include="TerrainUnit.h" />
     <ClInclude Include="Time.h" />
+    <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
