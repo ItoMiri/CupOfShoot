@@ -1,15 +1,17 @@
 #pragma once
 #include "TerrainUnit.h"
+#include "Vector2.h"
+#include <vector>
 class SquareTerrain :
     public TerrainUnit
 {
 public:
-    SquareTerrain(int maskNum, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);
+    SquareTerrain(int maskNum, Vector2 vec1, Vector2 vec2, Vector2 vec3, Vector2 vec4);
 
     void Update();
     void Draw();
 
 private:
-    
+    std::vector<Vector2> vec;
 };
 

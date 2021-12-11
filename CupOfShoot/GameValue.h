@@ -7,4 +7,6 @@ struct GameValue {
 	int windowHeight;
 	int graphWidth;
 	int graphHeight;
+	int monitorWidth;
+	int monitorHeight;
 };

@@ -157,6 +157,7 @@
     <ClCompile Include="FPSTimer.cpp" />
     <ClCompile Include="ImageResize.cpp" />
     <ClCompile Include="KeyboardInput.cpp" />
+    <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="MobUnit.cpp" />
     <ClCompile Include="MouseInput.cpp" />
     <ClCompile Include="NormalCup.cpp" />
@@ -173,6 +174,7 @@
     <ClInclude Include="GameValue.h" />
     <ClInclude Include="ImageResize.h" />
     <ClInclude Include="KeyboardInput.h" />
+    <ClInclude Include="MainGame.h" />
     <ClInclude Include="MobUnit.h" />
     <ClInclude Include="MouseInput.h" />
     <ClInclude Include="NormalCup.h" />
