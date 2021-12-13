@@ -25,8 +25,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	if (DxLib_Init() == -1)	return -1;
 
-	MainGame mainGame(gValue);
-
 	gValue.gameDrawHandle = MakeScreen(1920, 1080);
 	RECT rect, nowRect, monRec;
 	GetClientRect(GetMainWindowHandle(), &rect);
@@ -36,6 +34,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	gValue.monitorWidth = monRec.right;
 	gValue.monitorHeight = monRec.bottom;
 
+	MainGame mainGame(gValue);
 	while (!ProcessMessage() && !ScreenFlip() && !ClearDrawScreen()) {
 		GetClientRect(GetMainWindowHandle(), &nowRect);
 		if (rect.right != nowRect.right || rect.bottom != nowRect.bottom) {

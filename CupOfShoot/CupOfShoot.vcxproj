@@ -155,6 +155,7 @@
     <ClCompile Include="CupUnit.cpp" />
     <ClCompile Include="CupOfShoot.cpp" />
     <ClCompile Include="FPSTimer.cpp" />
+    <ClCompile Include="ImageContainer.cpp" />
     <ClCompile Include="ImageResize.cpp" />
     <ClCompile Include="KeyboardInput.cpp" />
     <ClCompile Include="MainGame.cpp" />
@@ -165,6 +166,7 @@
     <ClCompile Include="PlayerMob.cpp" />
     <ClCompile Include="SquareTerrain.cpp" />
     <ClCompile Include="TerrainUnit.cpp" />
+    <ClCompile Include="TerrianContainer.cpp" />
     <ClCompile Include="TerrianStack.cpp" />
     <ClCompile Include="Time.cpp" />
   </ItemGroup>
@@ -173,6 +175,7 @@
     <ClInclude Include="CupUnit.h" />
     <ClInclude Include="FPSTimer.h" />
     <ClInclude Include="GameValue.h" />
+    <ClInclude Include="ImageContainer.h" />
     <ClInclude Include="ImageResize.h" />
     <ClInclude Include="KeyboardInput.h" />
     <ClInclude Include="MainGame.h" />
@@ -183,6 +186,7 @@
     <ClInclude Include="PlayerMob.h" />
     <ClInclude Include="SquareTerrain.h" />
     <ClInclude Include="TerrainUnit.h" />
+    <ClInclude Include="TerrianContainer.h" />
     <ClInclude Include="TerrianStack.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Vector2.h" />

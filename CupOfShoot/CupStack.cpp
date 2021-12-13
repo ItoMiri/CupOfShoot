@@ -3,7 +3,7 @@
 CupStack::CupStack(int initialNum)
 {
 	cupMax = initialNum;
-	cupSize = 50;
+	cupSize = 300;
 	sAtSummoning = Vector2(0.0f, 5.0f);
 }
 

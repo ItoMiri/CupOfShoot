@@ -5,7 +5,7 @@ NormalCup::NormalCup(Vector2 vec, Vector2 sVec, float sizeX, float sizeY, bool b
 
 	posMass[0] = 0; // ここは計算必要 外部クラスで計算させる
 	posMass[1] = 0;
-	cupHandle = LoadGraph("./Contents/CupNormal.png"); // ここで外部mapより取得
+	cupHandle = LoadGraph("./Contents/CupNormal"); // ここで外部mapより取得，後に修正必要
 	cupHandle = ImageResize::Resize(cupHandle, (int)sizeX, (int)sizeY);
 
 	beBreaking = FALSE;
@@ -53,9 +53,7 @@ void NormalCup::Update() { // 重力判定等記述
 
 void NormalCup::Draw() {
 	if (!beLiving) return;
-	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 200);
 	SetDrawArea((int)vec.x - sizeX / 2, (int)vec.y - sizeY / 2, (int)vec.x - sizeX / 2 + (int)sizeX, (int)vec.y - sizeY / 2 + (int)sizeY);
 	DrawGraph((int)vec.x - sizeX / 2, (int)vec.y - sizeY / 2, cupHandle, TRUE);
-	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
 
 }

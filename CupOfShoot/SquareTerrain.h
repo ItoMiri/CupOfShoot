@@ -13,5 +13,6 @@ public:
 
 private:
     std::vector<Vector2> vec;
+    Vector2 end[2];
 };
 
