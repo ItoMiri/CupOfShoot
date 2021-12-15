@@ -17,7 +17,7 @@ PlayerMob::~PlayerMob()
 void PlayerMob::Update()
 {
 	if (KB::GetKey(KEY_INPUT_LCONTROL) == KB_PRESS_FIRST) {
-		(*cStack).IncreaseCup((int)vec.x, (int)vec.y + 60);
+		(*cStack).IncreaseCup((int)vec.x, (int)vec.y + 55);
 	}
 	if (KB::GetKey(KEY_INPUT_D) >= KB_PRESS_FIRST) {
 		sVec.x += 10 * Time::deltaTime;

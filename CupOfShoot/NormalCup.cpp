@@ -1,12 +1,12 @@
 #include "NormalCup.h"
 
-NormalCup::NormalCup(Vector2 vec, Vector2 sVec, float sizeX, float sizeY, bool beLiving, int life)
+NormalCup::NormalCup(Vector2 vec, Vector2 sVec, float sizeX, float sizeY, bool beLiving, int life, int cupHandle)
 	:CupUnit(vec, sVec, sizeX, sizeY, beLiving, life) {
 
 	posMass[0] = 0; // ここは計算必要 外部クラスで計算させる
 	posMass[1] = 0;
-	cupHandle = LoadGraph("./Contents/CupNormal"); // ここで外部mapより取得，後に修正必要
-	cupHandle = ImageResize::Resize(cupHandle, (int)sizeX, (int)sizeY);
+	this->cupHandle = cupHandle; // ここで外部mapより取得，後に修正必要
+	//cupHandle = ImageResize::Resize(cupHandle, (int)sizeX, (int)sizeY);
 
 	beBreaking = FALSE;
 	breakTimeMax = 0.5f;

@@ -3,8 +3,11 @@
 CupStack::CupStack(int initialNum)
 {
 	cupMax = initialNum;
-	cupSize = 300;
+	cupSize = 50;
 	sAtSummoning = Vector2(0.0f, 5.0f);
+
+	normalCupHundle = LoadGraph("./Contents/CupNormal");
+	normalCupHundle = ImageResize::Resize(normalCupHundle, cupSize, cupSize);
 }
 
 void CupStack::SetCupMax(int num)
@@ -17,7 +20,7 @@ void CupStack::SetCupQuantity(int num) // for Debug
 	size_t size = cup.size();
 	if (size < num) {
 		for (int i = 0; i < num - size; i++)
-			cup.push_back(NormalCup(Vector2(0), Vector2(0), (int)cupSize, (int)cupSize, TRUE, 10));
+			cup.push_back(NormalCup(Vector2(0), Vector2(0), (int)cupSize, (int)cupSize, TRUE, 10, normalCupHundle));
 	}
 	else if (size > num) {
 		for (int i = 0; i < size - num; i++) {
@@ -32,7 +35,7 @@ void CupStack::IncreaseCup(int x, int y)
 {
 	size_t size = cup.size();
 	if (size >= cupMax) DestroyCup();
-	cup.push_back(NormalCup(Vector2(x,y), sAtSummoning, (int)cupSize, (int)cupSize, TRUE, 10));
+	cup.push_back(NormalCup(Vector2(x,y), sAtSummoning, (int)cupSize, (int)cupSize, TRUE, 10, normalCupHundle));
 }
 
 void CupStack::Update()

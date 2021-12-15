@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "NormalCup.h"
+#include "ImageResize.h"
 class CupStack
 {
 public:
@@ -20,4 +21,6 @@ private:
 	int cupMax;
 	int cupSize;
 	std::vector<NormalCup> cup;
+
+	int normalCupHundle;
 };

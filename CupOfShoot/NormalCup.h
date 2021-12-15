@@ -1,6 +1,5 @@
 #pragma once
 #include "CupUnit.h"
-#include "ImageResize.h"
 #include "PhysicsData.h"
 #include "Time.h"
 
@@ -9,7 +8,7 @@ constexpr int CBRAKE_DISAPPEAR = 0;
 class NormalCup : public CupUnit
 {
 public:
-	NormalCup(Vector2 vec, Vector2 sVec, float sizeX, float sizeY, bool beLiving, int life);
+	NormalCup(Vector2 vec, Vector2 sVec, float sizeX, float sizeY, bool beLiving, int life, int cupHandle);
 
 	void ToggleOnBreak(int brakeMode = 0);
 
