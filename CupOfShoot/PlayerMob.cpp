@@ -54,6 +54,6 @@ void PlayerMob::Update()
 void PlayerMob::Draw()
 {
 	//DrawBox(0, 0, 500, 500, GetColor(255, 255, 255), TRUE);
-	SetDrawArea(vec.x - 25, vec.y - 25, vec.x + 25, vec.y + 25);
+	//SetDrawArea(vec.x - 25, vec.y - 25, vec.x + 25, vec.y + 25);
 	DrawBoxAA(vec.x-25, vec.y-25, vec.x+25, vec.y+25, GetColor(255, 0, 255), TRUE);
 }

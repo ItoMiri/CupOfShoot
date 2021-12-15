@@ -166,8 +166,8 @@
     <ClCompile Include="PlayerMob.cpp" />
     <ClCompile Include="SquareTerrain.cpp" />
     <ClCompile Include="TerrainUnit.cpp" />
-    <ClCompile Include="TerrianContainer.cpp" />
-    <ClCompile Include="TerrianStack.cpp" />
+    <ClCompile Include="TerrainContainer.cpp" />
+    <ClCompile Include="TerrainStack.cpp" />
     <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -186,8 +186,9 @@
     <ClInclude Include="PlayerMob.h" />
     <ClInclude Include="SquareTerrain.h" />
     <ClInclude Include="TerrainUnit.h" />
-    <ClInclude Include="TerrianContainer.h" />
-    <ClInclude Include="TerrianStack.h" />
+    <ClInclude Include="TerrainContainer.h" />
+    <ClInclude Include="TerrainStack.h" />
+    <ClInclude Include="TerrainValue.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Vector2.h" />
   </ItemGroup>

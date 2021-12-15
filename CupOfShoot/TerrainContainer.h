@@ -4,17 +4,17 @@
 #include "DxLib.h"
 
 using namespace std;
-class TerrianContainer
+class TerrainContainer
 {
 public:
-	TerrianContainer();
-	~TerrianContainer();
+	TerrainContainer();
+	~TerrainContainer();
 
-	TerrianContainer(const TerrianContainer&) = delete;
-	TerrianContainer& operator=(const TerrianContainer&) = delete; // コピー禁止
+	TerrainContainer(const TerrainContainer&) = delete;
+	TerrainContainer& operator=(const TerrainContainer&) = delete; // コピー禁止
 
-	void Add(string terrianName);
-	int GetTerrianHandle(string terrianName);
+	void Add(string TerrainName);
+	int GetTerrainHandle(string TerrainName);
 
 	void DeleteAll();
 
@@ -22,7 +22,7 @@ public:
 
 private:
 	int width, height;
-	map<string, int> terrian;
+	map<string, int> Terrain;
 };
 
 /*

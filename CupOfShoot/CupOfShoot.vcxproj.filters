@@ -102,10 +102,10 @@
     <ClCompile Include="MainGame.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="TerrianStack.cpp">
+    <ClCompile Include="TerrainStack.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="TerrianContainer.cpp">
+    <ClCompile Include="TerrainContainer.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="ImageContainer.cpp">
@@ -161,13 +161,16 @@
     <ClInclude Include="MainGame.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="TerrianStack.h">
+    <ClInclude Include="TerrainStack.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="TerrianContainer.h">
+    <ClInclude Include="TerrainContainer.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="ImageContainer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainValue.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

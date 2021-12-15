@@ -37,8 +37,8 @@ void NormalCup::Update() { // 重力判定等記述
 		if (breakTime <= 0.00f) {
 			beLiving = FALSE;
 		}
-		SetDrawArea(0, 0, 200, 50);
-		DrawFormatString(0, 0, GetColor(255, 255, 255), "%f", breakTime);
+		//SetDrawArea(0, 0, 200, 50);
+		//DrawFormatString(0, 0, GetColor(255, 255, 255), "%f", breakTime);
 		return;
 	}
 	sVec.x += 0.0f;
@@ -53,7 +53,7 @@ void NormalCup::Update() { // 重力判定等記述
 
 void NormalCup::Draw() {
 	if (!beLiving) return;
-	SetDrawArea((int)vec.x - sizeX / 2, (int)vec.y - sizeY / 2, (int)vec.x - sizeX / 2 + (int)sizeX, (int)vec.y - sizeY / 2 + (int)sizeY);
+	//SetDrawArea((int)vec.x - sizeX / 2, (int)vec.y - sizeY / 2, (int)vec.x - sizeX / 2 + (int)sizeX, (int)vec.y - sizeY / 2 + (int)sizeY);
 	DrawGraph((int)vec.x - sizeX / 2, (int)vec.y - sizeY / 2, cupHandle, TRUE);
 
 }

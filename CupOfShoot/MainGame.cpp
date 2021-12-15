@@ -19,7 +19,7 @@ void MainGame::Draw()
 	ClearDrawScreen();
 	SetDrawArea(0, 0, 1920, 1080);
 	DrawBox(0, 0, 1920, 1080, GetColor(200, 40, 50), TRUE);
-	SetDrawArea(0, 0, 0, 0);
+	//SetDrawArea(0, 0, 0, 0);
 	cStack.Draw();
 	tStack.Draw();
 	player.Draw();

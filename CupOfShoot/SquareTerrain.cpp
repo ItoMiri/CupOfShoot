@@ -1,13 +1,41 @@
 #include "SquareTerrain.h"
 
-SquareTerrain::SquareTerrain(int maskNum, Vector2 vec1, Vector2 vec2, Vector2 vec3, Vector2 vec4)
-	:TerrainUnit(maskNum)
-{
-	vec.push_back(vec1);
-	vec.push_back(vec2);
-	vec.push_back(vec3);
-	vec.push_back(vec4);
+PolygonTerrain::PolygonTerrain(int maskNum)
+	:TerrainUnit(maskNum),index(0)
+{}
 
+void PolygonTerrain::AddWeapon(Vector2 vec)
+{
+	this->vec.push_back(vec);
+}
+
+void PolygonTerrain::SetStartPosition(int index)
+{
+	this->index = index;
+}
+
+void PolygonTerrain::Update()
+{
+	// 当たり判定
+}
+
+void PolygonTerrain::Draw()
+{
+	/*DrawLineAA(vec[0].x, vec[0].y, vec[1].x, vec[1].y, GetColor(0, 255, 255), 3);
+	DrawLineAA(vec[1].x, vec[1].y, vec[2].x, vec[2].y, GetColor(0, 255, 255), 3);
+	DrawLineAA(vec[2].x, vec[2].y, vec[3].x, vec[3].y, GetColor(0, 255, 255), 3);
+	DrawLineAA(vec[3].x, vec[3].y, vec[0].x, vec[0].y, GetColor(0, 255, 255), 3);*/
+
+	int a = 0, b = 1;
+	for (int i = 0; i < vec.size(); i ++, a++,b++) {
+		if (b >= vec.size()) b = 0;
+		DrawLineAA(vec[a].x, vec[a].y, vec[b].x, vec[b].y, GetColor(0, 255, 255), 3);
+	}
+}
+
+void PolygonTerrain::DoShape()
+{
+	if (vec.size() < 3) return; // 構築不可
 	end[0] = vec[0];
 	end[1] = vec[2];
 	for (auto vecs : vec) {
@@ -17,21 +45,17 @@ SquareTerrain::SquareTerrain(int maskNum, Vector2 vec1, Vector2 vec2, Vector2 ve
 		if (end[1].y < vecs.y) end[1].y = vecs.y;
 	}
 
-	Draw();
+	ShapeMask();
 }
 
-void SquareTerrain::Update()
-{
-
-}
-
-void SquareTerrain::Draw()
+void PolygonTerrain::ShapeMask()
 {
 	SetDrawScreen(maskNum);
-	//SetDrawArea(end[0].x, end[0].y, end[1].x, end[1].y);
-	SetDrawArea(0,0,1920,1080);
-	DrawTriangle(vec[0].x, vec[0].y, vec[1].x, vec[1].y, vec[3].x, vec[3].y, GetColor(0, 0, 0), TRUE);
-	DrawTriangle(vec[1].x, vec[1].y, vec[2].x, vec[2].y, vec[3].x, vec[3].y, GetColor(0, 0, 0), TRUE);
-	// 三角形で2回描画
-	// mask画面をterrainStackで管理して，予めハンドルのポインタ配列を渡すのもあり
+	int size = vec.size();
+	int a = index, b = a+1, c = a+2;
+	for (int i = 0; i < size - 2; i++, b++, c++) {
+		if (b >= size) b -= size;
+		if (c >= size) c -= size;
+		DrawTriangleAA(vec[a].x, vec[a].y, vec[b].x, vec[b].y, vec[c].x, vec[c].y, GetColor(0, 0, 0), TRUE);
+	}
 }
