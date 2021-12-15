@@ -13,17 +13,164 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\Cup">
+      <UniqueIdentifier>{4ef2c8d3-ba0d-46c6-bc1b-9745cbc7f55c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Cup">
+      <UniqueIdentifier>{65e05a4e-eb4d-496f-9fbb-ce1ce2d48036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\System">
+      <UniqueIdentifier>{5f5c63f5-008b-4b95-82df-caef86ec9c29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\System">
+      <UniqueIdentifier>{ea7c115a-b3a3-43ec-b69e-d48ee8404149}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Mob">
+      <UniqueIdentifier>{5a6c80a6-6acc-425c-a52f-e16e3cb8a467}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Mob">
+      <UniqueIdentifier>{de49d482-49ff-40f8-9d30-e0975182ec6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Mob\Player">
+      <UniqueIdentifier>{dfa5179f-76da-4f84-aa4a-3cc572541bc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Mob\Enemy">
+      <UniqueIdentifier>{f6776f21-3a4b-46fd-a1ad-973140c148a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Mob\Player">
+      <UniqueIdentifier>{ab53dda2-30b8-4c34-8182-c9428b1a6f27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Const">
+      <UniqueIdentifier>{03f1768d-2366-4922-a2bf-cdfde3f31cea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Terrain">
+      <UniqueIdentifier>{f74f6ad5-4c08-4fe8-bb7d-f20c02e06166}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Terrain">
+      <UniqueIdentifier>{0698e951-c9cf-4003-9c93-95f1512ed73b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Const">
+      <UniqueIdentifier>{34ba0e33-9670-4658-a966-1a785c419d06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Struct">
+      <UniqueIdentifier>{8520ebde-7adf-4b18-a5e2-4f4c9667bd12}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DrawPixel.cpp">
+    <ClCompile Include="CupOfShoot.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CupStack.cpp">
+      <Filter>ソース ファイル\Cup</Filter>
     </ClCompile>
     <ClCompile Include="CupUnit.cpp">
+      <Filter>ソース ファイル\Cup</Filter>
+    </ClCompile>
+    <ClCompile Include="NormalCup.cpp">
+      <Filter>ソース ファイル\Cup</Filter>
+    </ClCompile>
+    <ClCompile Include="FPSTimer.cpp">
+      <Filter>ソース ファイル\System</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMob.cpp">
+      <Filter>ソース ファイル\Mob\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageResize.cpp">
+      <Filter>ソース ファイル\System</Filter>
+    </ClCompile>
+    <ClCompile Include="MobUnit.cpp">
+      <Filter>ソース ファイル\Mob</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyboardInput.cpp">
+      <Filter>ソース ファイル\System</Filter>
+    </ClCompile>
+    <ClCompile Include="MouseInput.cpp">
+      <Filter>ソース ファイル\System</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsData.cpp">
+      <Filter>ソース ファイル\Const</Filter>
+    </ClCompile>
+    <ClCompile Include="SquareTerrain.cpp">
+      <Filter>ソース ファイル\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainUnit.cpp">
+      <Filter>ソース ファイル\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>ソース ファイル\System</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainStack.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainContainer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageContainer.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CupStack.h">
+      <Filter>ヘッダー ファイル\Cup</Filter>
+    </ClInclude>
     <ClInclude Include="CupUnit.h">
+      <Filter>ヘッダー ファイル\Cup</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalCup.h">
+      <Filter>ヘッダー ファイル\Cup</Filter>
+    </ClInclude>
+    <ClInclude Include="FPSTimer.h">
+      <Filter>ヘッダー ファイル\System</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMob.h">
+      <Filter>ヘッダー ファイル\Mob\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageResize.h">
+      <Filter>ヘッダー ファイル\System</Filter>
+    </ClInclude>
+    <ClInclude Include="MobUnit.h">
+      <Filter>ヘッダー ファイル\Mob</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainUnit.h">
+      <Filter>ヘッダー ファイル\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="SquareTerrain.h">
+      <Filter>ヘッダー ファイル\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardInput.h">
+      <Filter>ヘッダー ファイル\System</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseInput.h">
+      <Filter>ヘッダー ファイル\System</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsData.h">
+      <Filter>ヘッダー ファイル\Const</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>ヘッダー ファイル\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>ヘッダー ファイル\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="GameValue.h">
+      <Filter>ヘッダー ファイル\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGame.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainStack.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainContainer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageContainer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainValue.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

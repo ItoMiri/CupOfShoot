@@ -29,13 +29,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -151,11 +151,46 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CupStack.cpp" />
     <ClCompile Include="CupUnit.cpp" />
-    <ClCompile Include="DrawPixel.cpp" />
+    <ClCompile Include="CupOfShoot.cpp" />
+    <ClCompile Include="FPSTimer.cpp" />
+    <ClCompile Include="ImageContainer.cpp" />
+    <ClCompile Include="ImageResize.cpp" />
+    <ClCompile Include="KeyboardInput.cpp" />
+    <ClCompile Include="MainGame.cpp" />
+    <ClCompile Include="MobUnit.cpp" />
+    <ClCompile Include="MouseInput.cpp" />
+    <ClCompile Include="NormalCup.cpp" />
+    <ClCompile Include="PhysicsData.cpp" />
+    <ClCompile Include="PlayerMob.cpp" />
+    <ClCompile Include="SquareTerrain.cpp" />
+    <ClCompile Include="TerrainUnit.cpp" />
+    <ClCompile Include="TerrainContainer.cpp" />
+    <ClCompile Include="TerrainStack.cpp" />
+    <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CupStack.h" />
     <ClInclude Include="CupUnit.h" />
+    <ClInclude Include="FPSTimer.h" />
+    <ClInclude Include="GameValue.h" />
+    <ClInclude Include="ImageContainer.h" />
+    <ClInclude Include="ImageResize.h" />
+    <ClInclude Include="KeyboardInput.h" />
+    <ClInclude Include="MainGame.h" />
+    <ClInclude Include="MobUnit.h" />
+    <ClInclude Include="MouseInput.h" />
+    <ClInclude Include="NormalCup.h" />
+    <ClInclude Include="PhysicsData.h" />
+    <ClInclude Include="PlayerMob.h" />
+    <ClInclude Include="SquareTerrain.h" />
+    <ClInclude Include="TerrainUnit.h" />
+    <ClInclude Include="TerrainContainer.h" />
+    <ClInclude Include="TerrainStack.h" />
+    <ClInclude Include="TerrainValue.h" />
+    <ClInclude Include="Time.h" />
+    <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
