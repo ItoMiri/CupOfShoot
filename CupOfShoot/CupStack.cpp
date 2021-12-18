@@ -35,7 +35,7 @@ void CupStack::IncreaseCup(int x, int y)
 {
 	size_t size = cup.size();
 	if (size >= cupMax) DestroyCup();
-	cup.push_back(NormalCup(Vector2(x,y), sAtSummoning, (int)cupSize, (int)cupSize, TRUE, 10, normalCupHundle));
+	cup.push_back(NormalCup(Vector2(x, y), sAtSummoning, (int)cupSize, (int)cupSize, TRUE, 10, normalCupHundle));
 }
 
 void CupStack::Update()

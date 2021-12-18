@@ -7,9 +7,9 @@ TerrainStack::TerrainStack()
 	terName.push_back("StageTile1");
 	//vec.push_back({ Vector2(50, 300), Vector2(400, 300), Vector2(400, 500), Vector2(100, 500) });
 	vector<Vector2> v{ Vector2(50, 300), Vector2(400, 300), Vector2(400, 500), Vector2(100, 500) };
-	tv.push_back(TerrainValue("StageTile1",v));
+	tv.push_back(TerrainValue("StageTile1", v));
 	vector<Vector2> vc{ Vector2(650, 500), Vector2(800, 650), Vector2(850, 800), Vector2(900, 650),Vector2(1200, 500),Vector2(1200, 200),Vector2(650, 200) };
-	tv.push_back(TerrainValue("StageTile1", vc,1));
+	tv.push_back(TerrainValue("StageTile1", vc, 1));
 
 	Shape();
 }
@@ -37,7 +37,7 @@ void TerrainStack::Draw()
 	for (auto& ters : ter) {
 		ters->Draw();
 	}
-	
+
 }
 
 void TerrainStack::Shape()

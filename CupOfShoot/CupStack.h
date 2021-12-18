@@ -6,7 +6,7 @@ class CupStack
 {
 public:
 	CupStack(int initialNum);
-	
+
 	void SetCupMax(int num); // Å‘å’l‚ğ”w’è
 	void SetCupQuantity(int num); // ‘B—p
 

@@ -37,18 +37,12 @@ void NormalCup::Update() { // d—Í”»’è“™‹Lq
 		if (breakTime <= 0.00f) {
 			beLiving = FALSE;
 		}
-		//SetDrawArea(0, 0, 200, 50);
-		//DrawFormatString(0, 0, GetColor(255, 255, 255), "%f", breakTime);
 		return;
 	}
 	sVec.x += 0.0f;
 	sVec.y += Physics::phyG * Time::deltaTime;
 	vec.x += sVec.x;
 	vec.y += sVec.y;
-
-	/*if (GetNowCount() % 60 == 0) {
-
-	}*/
 }
 
 void NormalCup::Draw() {

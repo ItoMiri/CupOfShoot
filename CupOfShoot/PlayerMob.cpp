@@ -35,25 +35,37 @@ void PlayerMob::Update()
 	if (!sxPlus) sVec.x = -sVec.x;
 
 	if (sVec.y > sVecMax.y) sVec.y = sVecMax.y;
-	
-	
-	/*if (direction == 1 && sVec.x <= 0.0f) {
-		sVec.x = 0;
-	}
-	else if (direction == -1 && sVec.x >= 0.0f) {
-		sVec.x = 0;
-	}*/
 
 	vec.x += sVec.x;
 	vec.y += sVec.y;
 
 	if (vec.x < 0 - 25) vec.x = 1920 + 25;
-	if (vec.x > 1920+ 25) vec.x = -25;
+	if (vec.x > 1920 + 25) vec.x = -25;
 }
 
 void PlayerMob::Draw()
 {
-	//DrawBox(0, 0, 500, 500, GetColor(255, 255, 255), TRUE);
-	//SetDrawArea(vec.x - 25, vec.y - 25, vec.x + 25, vec.y + 25);
-	DrawBoxAA(vec.x-25, vec.y-25, vec.x+25, vec.y+25, GetColor(255, 0, 255), TRUE);
+	DrawBoxAA(vec.x - 25, vec.y - 25, vec.x + 25, vec.y + 25, GetColor(255, 0, 255), TRUE);
+}
+
+Vector2 PlayerMob::GetPlayerSpeedVector()
+{
+	return sVec;
+}
+
+Vector2 PlayerMob::GetPlayerPosition(int position)
+{
+	switch (position)
+	{
+	case PLAYER_UPPER_LEFT:
+		return Vector2(vec.x - 25, vec.y - 25);
+	case PLAYER_UPPER_RIGHT:
+		return Vector2(vec.x + 25, vec.y - 25);
+	case PLAYER_LOWER_RIGHT:
+		return Vector2(vec.x + 25, vec.y + 25);
+	case PLAYER_LOWER_LEFT:
+		return Vector2(vec.x - 25, vec.y + 25);
+	default:
+		return Vector2();
+	}
 }

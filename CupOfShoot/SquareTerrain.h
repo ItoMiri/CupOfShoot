@@ -1,24 +1,33 @@
 #pragma once
 #include "TerrainUnit.h"
 #include "Vector2.h"
+#include "NormalVectorTerrain.h"
+#include "PlayerMob.h"
 #include <vector>
+#include <array>
+#include <cmath>
+
 class PolygonTerrain :
-    public TerrainUnit
+	public TerrainUnit
 {
 public:
-    PolygonTerrain(int maskNum);
+	PolygonTerrain(int maskNum, PlayerMob &playerMob);
 
-    virtual void Update();
-    virtual void Draw();
-    virtual void DoShape();
-    virtual void AddWeapon(Vector2 vec);
-    virtual void SetStartPosition(int index = 0);
+	virtual void Update();
+	virtual void Draw();
+	virtual void DoShape();
+	virtual void AddWeapon(Vector2 vec);
+	virtual void SetStartPosition(int index = 0);
 
 private:
-    virtual void ShapeMask();
+	virtual void ShapeMask();
+	virtual void Collide();
 
-    int index;
-    std::vector<Vector2> vec;
-    Vector2 end[2];
+	PlayerMob* playerMob{};
+
+	int index;
+	std::vector<Vector2> vec;
+	std::vector<NormalVectorTerrain> nvt;
+	Vector2 end[2];
 };
 

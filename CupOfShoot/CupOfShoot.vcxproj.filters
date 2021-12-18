@@ -55,6 +55,18 @@
     <Filter Include="ヘッダー ファイル\Struct">
       <UniqueIdentifier>{8520ebde-7adf-4b18-a5e2-4f4c9667bd12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\Image">
+      <UniqueIdentifier>{ac782c16-33c2-4276-b7cb-645590e7159b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene">
+      <UniqueIdentifier>{2e9a5656-c1a4-4581-8006-ebabe7e6519a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene">
+      <UniqueIdentifier>{ea0750ee-f405-43a7-bb21-e2e0ab2048ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Image">
+      <UniqueIdentifier>{6f37229f-d71d-4e15-a128-7455e9276c73}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CupOfShoot.cpp">
@@ -99,16 +111,19 @@
     <ClCompile Include="Time.cpp">
       <Filter>ソース ファイル\System</Filter>
     </ClCompile>
-    <ClCompile Include="MainGame.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="TerrainStack.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Terrain</Filter>
     </ClCompile>
     <ClCompile Include="TerrainContainer.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
     <ClCompile Include="ImageContainer.cpp">
+      <Filter>ソース ファイル\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="GameConstData.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -158,20 +173,26 @@
     <ClInclude Include="GameValue.h">
       <Filter>ヘッダー ファイル\Struct</Filter>
     </ClInclude>
-    <ClInclude Include="MainGame.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="TerrainStack.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="ImageContainer.h">
+      <Filter>ヘッダー ファイル\Image</Filter>
     </ClInclude>
     <ClInclude Include="TerrainContainer.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\Terrain</Filter>
     </ClInclude>
-    <ClInclude Include="ImageContainer.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="TerrainStack.h">
+      <Filter>ヘッダー ファイル\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGame.h">
+      <Filter>ヘッダー ファイル\Scene</Filter>
     </ClInclude>
     <ClInclude Include="TerrainValue.h">
+      <Filter>ヘッダー ファイル\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="GameConstData.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalVectorTerrain.h">
+      <Filter>ヘッダー ファイル\Struct</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

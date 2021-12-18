@@ -155,6 +155,7 @@
     <ClCompile Include="CupUnit.cpp" />
     <ClCompile Include="CupOfShoot.cpp" />
     <ClCompile Include="FPSTimer.cpp" />
+    <ClCompile Include="GameConstData.cpp" />
     <ClCompile Include="ImageContainer.cpp" />
     <ClCompile Include="ImageResize.cpp" />
     <ClCompile Include="KeyboardInput.cpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="CupStack.h" />
     <ClInclude Include="CupUnit.h" />
     <ClInclude Include="FPSTimer.h" />
+    <ClInclude Include="GameConstData.h" />
     <ClInclude Include="GameValue.h" />
     <ClInclude Include="ImageContainer.h" />
     <ClInclude Include="ImageResize.h" />
@@ -182,6 +184,7 @@
     <ClInclude Include="MobUnit.h" />
     <ClInclude Include="MouseInput.h" />
     <ClInclude Include="NormalCup.h" />
+    <ClInclude Include="NormalVectorTerrain.h" />
     <ClInclude Include="PhysicsData.h" />
     <ClInclude Include="PlayerMob.h" />
     <ClInclude Include="SquareTerrain.h" />
