@@ -163,6 +163,7 @@
     <ClCompile Include="MobUnit.cpp" />
     <ClCompile Include="MouseInput.cpp" />
     <ClCompile Include="NormalCup.cpp" />
+    <ClCompile Include="NormalVectorTerrain.cpp" />
     <ClCompile Include="PhysicsData.cpp" />
     <ClCompile Include="PlayerMob.cpp" />
     <ClCompile Include="SquareTerrain.cpp" />

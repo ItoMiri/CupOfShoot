@@ -22,6 +22,8 @@ public:
 private:
 	virtual void ShapeMask();
 	virtual void Collide();
+	virtual bool CompareVector2(struct Vector2 *a, struct Vector2 *b);
+
 
 	PlayerMob* playerMob{};
 

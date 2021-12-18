@@ -1,6 +1,6 @@
 #include "SquareTerrain.h"
 
-PolygonTerrain::PolygonTerrain(int maskNum, PlayerMob &playerMob)
+PolygonTerrain::PolygonTerrain(int maskNum, PlayerMob& playerMob)
 	:TerrainUnit(maskNum), index(0)
 {
 	this->playerMob = &playerMob;
@@ -24,9 +24,32 @@ void PolygonTerrain::Update()
 
 void PolygonTerrain::Collide()
 {
+	Vector2 playerUL = (*playerMob).GetPlayerPosition(PLAYER_UPPER_LEFT),
+		playerUR = (*playerMob).GetPlayerPosition(PLAYER_UPPER_RIGHT),
+		playerLR = (*playerMob).GetPlayerPosition(PLAYER_LOWER_RIGHT),
+		playerLL = (*playerMob).GetPlayerPosition(PLAYER_LOWER_LEFT);
+	Vector2 polygon0, polygon1, polygon2;
 	for (const auto& nvts : nvt) {
-		
+		polygon0 = nvts.linePoint[0];
+		polygon1 = nvts.linePoint[1];
+		polygon2 = nvts.pointThird;
+
+		if (HitCheck_Triangle_Triangle_2D(VGet(playerUL.x, playerUL.y, 0), VGet(playerUR.x, playerUR.y, 0), VGet(playerLL.x, playerLL.y, 0),
+			VGet(polygon0.x, polygon0.y, 0), VGet(polygon1.x, polygon1.y, 0), VGet(polygon2.x, polygon2.y, 0)) ||
+			HitCheck_Triangle_Triangle_2D(VGet(playerUR.x, playerUR.y, 0), VGet(playerLR.x, playerLR.y, 0), VGet(playerLL.x, playerLL.y, 0),
+				VGet(polygon0.x, polygon0.y, 0), VGet(polygon1.x, polygon1.y, 0), VGet(polygon2.x, polygon2.y, 0)))
+		{
+			Vector2 newPlayerSpeedVector;
+			newPlayerSpeedVector.x = (*playerMob).GetPlayerSpeedVector().x; //　ここに内積x正規化済n
+			// 接触時
+		}
 	}
+}
+
+bool PolygonTerrain::CompareVector2(struct Vector2* a, struct Vector2* b)
+{
+	return a->x == b->x &&
+		a->y == b->y;
 }
 
 
@@ -61,11 +84,24 @@ void PolygonTerrain::DoShape()
 	for (int i = 0; i < size; i++, i2++) {
 		if (i2 >= size) i2 -= size;
 		std::array<Vector2, 2> point = { vec[i1],vec[i2] };
+		Vector2 thirdPos;
+		if (!CompareVector2(&vec[index], &point[0]) && !CompareVector2(&vec[index], &point[1]))
+			thirdPos = vec[index];
+		else {
+			int i = index + 1;
+			if (i >= size) i -= size;
+			while (CompareVector2(&vec[i], &point[0]) || CompareVector2(&vec[i], &point[1])) {
+				i++;
+				if (i >= size) i -= size;
+			}
+			thirdPos = vec[i];
+		}
+
 		float a = (vec[i2].y - vec[i1].y) / (vec[i2].x - vec[i1].x); // y = ax + b
 		//float b = vec[i1].y - a * vec[i1].x;
 		Vector2 nVec(-a, 1.0f);
 		Vector2 normalizeNVec(nVec.x / std::sqrt(std::powf(nVec.x, 2) + std::powf(nVec.y, 2)), nVec.y / std::sqrt(std::powf(nVec.x, 2) + std::powf(nVec.y, 2)));
-		nvt.push_back(NormalVectorTerrain(normalizeNVec, point)); // 法線ベクトル
+		nvt.push_back(NormalVectorTerrain(normalizeNVec, point, thirdPos)); // 法線ベクトル
 	}
 
 	ShapeMask();
