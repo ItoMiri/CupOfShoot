@@ -1,15 +1,19 @@
 #include "TerrainStack.h"
 
-TerrainStack::TerrainStack()
+TerrainStack::TerrainStack(PlayerMob& playerMob)
 	:tContainer(), iContainer()
 {
+	this->playerMob = &playerMob;
 	// ここでファイルの入出力をする必要性
 	terName.push_back("StageTile1");
 	//vec.push_back({ Vector2(50, 300), Vector2(400, 300), Vector2(400, 500), Vector2(100, 500) });
-	vector<Vector2> v{ Vector2(50, 300), Vector2(400, 300), Vector2(400, 500), Vector2(100, 500) };
-	tv.push_back(TerrainValue("StageTile1", v));
-	vector<Vector2> vc{ Vector2(650, 500), Vector2(800, 650), Vector2(850, 800), Vector2(900, 650),Vector2(1200, 500),Vector2(1200, 200),Vector2(650, 200) };
-	tv.push_back(TerrainValue("StageTile1", vc, 1));
+	//vector<Vector2> v{ Vector2(50, 300), Vector2(400, 300), Vector2(400, 500), Vector2(100, 500) };
+	//tv.push_back(TerrainValue("StageTile1", v));
+	//vector<Vector2> vc{ Vector2(650, 500), Vector2(800, 650), Vector2(850, 800), Vector2(900, 650),Vector2(1200, 500),Vector2(1200, 200),Vector2(650, 200) };
+	vector<Vector2> vc{ Vector2(400, 500), Vector2(1000, 500), Vector2(1000, 1000) };
+	tv.push_back(TerrainValue("StageTile1", vc));
+	//vector<Vector2> v3{ Vector2(1300, 500), Vector2(1700, 650), Vector2(1000, 800)};
+	//tv.push_back(TerrainValue("StageTile1", v3));
 
 	Shape();
 }
@@ -24,7 +28,7 @@ void TerrainStack::Update()
 void TerrainStack::Draw()
 {
 	//SetDrawArea(0, 0, 1920, 1080);
-	for (auto names : terName) {
+	/*for (auto names : terName) {
 		SetMaskScreenGraph(tContainer.GetTerrainHandle(names));
 		SetUseMaskScreenFlag(TRUE);
 		SetMaskReverseEffectFlag(TRUE);
@@ -32,7 +36,7 @@ void TerrainStack::Draw()
 		SetUseMaskScreenFlag(FALSE);
 		SetMaskReverseEffectFlag(FALSE);
 		SetMaskScreenGraph(-1);
-	}
+	}*/
 
 	for (auto& ters : ter) {
 		ters->Draw();
@@ -53,7 +57,7 @@ void TerrainStack::Shape()
 
 			for (auto tvs : tv) {
 				if (tvs.maskName != names) continue;
-				auto* t = new PolygonTerrain(tContainer.GetTerrainHandle(names));
+				auto* t = new PolygonTerrain(tContainer.GetTerrainHandle(names),*playerMob);
 				ter.push_back(t); // 地形生成
 				for (auto vecs : tvs.vec) {
 					t->AddWeapon(vecs);

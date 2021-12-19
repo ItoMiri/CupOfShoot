@@ -23,6 +23,8 @@ public:
     Vector2 GetPlayerSpeedVector();
     Vector2 GetPlayerPosition(int position);
 
+    void SetPlayerSpeedVector(Vector2 sVec);
+
 private:
     CupStack* cStack{};
     int direction;

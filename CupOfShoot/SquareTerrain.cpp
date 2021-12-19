@@ -33,14 +33,18 @@ void PolygonTerrain::Collide()
 		polygon0 = nvts.linePoint[0];
 		polygon1 = nvts.linePoint[1];
 		polygon2 = nvts.pointThird;
-
+		DrawTriangle(polygon0.x,polygon0.y, polygon1.x, polygon1.y, polygon2.x, polygon2.y,GetColor(255,255,255),TRUE);
 		if (HitCheck_Triangle_Triangle_2D(VGet(playerUL.x, playerUL.y, 0), VGet(playerUR.x, playerUR.y, 0), VGet(playerLL.x, playerLL.y, 0),
 			VGet(polygon0.x, polygon0.y, 0), VGet(polygon1.x, polygon1.y, 0), VGet(polygon2.x, polygon2.y, 0)) ||
 			HitCheck_Triangle_Triangle_2D(VGet(playerUR.x, playerUR.y, 0), VGet(playerLR.x, playerLR.y, 0), VGet(playerLL.x, playerLL.y, 0),
 				VGet(polygon0.x, polygon0.y, 0), VGet(polygon1.x, polygon1.y, 0), VGet(polygon2.x, polygon2.y, 0)))
 		{
 			Vector2 newPlayerSpeedVector;
-			newPlayerSpeedVector.x = (*playerMob).GetPlayerSpeedVector().x; //@‚±‚±‚É“àÏx³‹K‰»Ïn
+			float dot = -1.0f * ((*playerMob).GetPlayerSpeedVector().x * nvts.normalVector.x + (*playerMob).GetPlayerSpeedVector().y * nvts.normalVector.y);
+			newPlayerSpeedVector.x = (*playerMob).GetPlayerSpeedVector().x + dot * nvts.normalVector.x;
+			newPlayerSpeedVector.y = (*playerMob).GetPlayerSpeedVector().y + dot * nvts.normalVector.y;
+
+			(*playerMob).SetPlayerSpeedVector(newPlayerSpeedVector);
 			// ÚGŽž
 		}
 	}
@@ -65,6 +69,9 @@ void PolygonTerrain::Draw()
 		if (b >= vec.size()) b = 0;
 		DrawLineAA(vec[a].x, vec[a].y, vec[b].x, vec[b].y, GetColor(0, 255, 255), 3);
 	}
+
+	
+	DrawFormatString(100, 100, GetColor(255, 255, 255), "%d", nvt.size());
 }
 
 void PolygonTerrain::DoShape()

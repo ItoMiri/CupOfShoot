@@ -31,6 +31,7 @@ void PlayerMob::Update()
 	if (!sxPlus) sVec.x = -sVec.x;
 	if (sVec.x > sVecMax.x) sVec.x = sVecMax.x;
 	sVec.x -= 5 * Time::deltaTime;
+	sVec.y += Physics::phyG/50 * Time::deltaTime;
 	if (sVec.x < 0) sVec.x = 0;
 	if (!sxPlus) sVec.x = -sVec.x;
 
@@ -41,11 +42,14 @@ void PlayerMob::Update()
 
 	if (vec.x < 0 - 25) vec.x = 1920 + 25;
 	if (vec.x > 1920 + 25) vec.x = -25;
+
+	if (vec.y > 1105) vec.y = -25;
 }
 
 void PlayerMob::Draw()
 {
 	DrawBoxAA(vec.x - 25, vec.y - 25, vec.x + 25, vec.y + 25, GetColor(255, 0, 255), TRUE);
+	DrawFormatString(50, 50, GetColor(255, 255, 255), "(%g,%g)", vec.x, vec.y);
 }
 
 Vector2 PlayerMob::GetPlayerSpeedVector()
@@ -68,4 +72,9 @@ Vector2 PlayerMob::GetPlayerPosition(int position)
 	default:
 		return Vector2();
 	}
+}
+
+void PlayerMob::SetPlayerSpeedVector(Vector2 sVec)
+{
+	this->sVec = sVec;
 }

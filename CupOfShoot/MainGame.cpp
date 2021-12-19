@@ -1,7 +1,7 @@
 #include "MainGame.h"
 
 MainGame::MainGame(GameValue& gValue)
-	:cStack(3), player(Vector2(100, 100), Vector2(0), 10, cStack), tStack()
+	:cStack(3), player(Vector2(100, 100), Vector2(0), 10, cStack), tStack(player)
 {
 	this->gValue = &gValue;
 }
@@ -9,8 +9,8 @@ MainGame::MainGame(GameValue& gValue)
 void MainGame::Update()
 {
 	cStack.Update();
-	tStack.Update();
 	player.Update();
+	tStack.Update();
 }
 
 void MainGame::Draw()
